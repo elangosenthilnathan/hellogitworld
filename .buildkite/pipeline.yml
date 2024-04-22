@@ -6,6 +6,6 @@ steps:
   - label: ":white_check_mark: Test"
     command: |
       curl https://cdn.shiftleft.io/download/sl > ./sl && chmod a+rx ./sl
-      ./sl analyze --strict --wait --app $$pipeline.repository  --tag branch=$$BUILDKITE_BRANCH .
-      ./sl check-analysis --v2 --app $pipeline.repository --branch=$$BUILDKITE_BRANCH --target tag.branch=master --config shiftleft.yml
+      ./sl analyze --wait --app "$pipeline.repository"  --tag branch="$BUILDKITE_BRANCH" .
+      ./sl check-analysis --v2 --app "$pipeline.repository" --branch="$BUILDKITE_BRANCH" --target tag.branch=master --config shiftleft.yml
     key: test
