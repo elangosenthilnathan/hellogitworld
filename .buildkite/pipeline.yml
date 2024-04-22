@@ -7,5 +7,5 @@ steps:
     command: |
       curl https://cdn.shiftleft.io/download/sl > ./sl && chmod a+rx ./sl
       ./sl analyze --strict --wait --app myApp  .
-      ./sl check-analysis --v2 --app myApp --no-build-rules 
+      ./sl check-analysis --v2 --app myApp --branch=master --target tag.branch=releasebranch --config shiftleft.yml
     key: test
