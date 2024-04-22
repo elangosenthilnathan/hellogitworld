@@ -5,7 +5,8 @@ tags: ["appsec"]
 steps:
   - label: ":white_check_mark: Test"
     command: |
+      repoName=basename $(git remote get-url origin)
       curl https://cdn.shiftleft.io/download/sl > ./sl && chmod a+rx ./sl
-      ./sl analyze --wait --app "$pipeline.repository"  --tag branch="$BUILDKITE_BRANCH" .
-      ./sl check-analysis --v2 --app "$pipeline.repository" --branch="$BUILDKITE_BRANCH" --target tag.branch=master --config shiftleft.yml
+      ./sl analyze --wait --app "$repoName"  --tag branch="$BUILDKITE_BRANCH" .
+      ./sl check-analysis --v2 --app "$repoName" --branch="$BUILDKITE_BRANCH" --target tag.branch=release --config shiftleft.yml
     key: test
