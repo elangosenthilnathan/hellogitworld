@@ -5,7 +5,7 @@ tags: ["appsec"]
 steps:
   - label: ":white_check_mark: Test"
     command: |
-      repoName=` echo "$BUILDKITE_REPO" | cut -d: -f2 | cut -d. -f1 | cut -d/ -f2`
+      repoName="$BUILDKITE_REPO"
       curl https://cdn.shiftleft.io/download/sl > ./sl && chmod a+rx ./sl
       ./sl analyze --wait --app "$repoName"  --tag branch="$BUILDKITE_BRANCH" .
       ./sl check-analysis --v2 --app "$repoName" --branch="$BUILDKITE_BRANCH" --target tag.branch=release --config shiftleft.yml
