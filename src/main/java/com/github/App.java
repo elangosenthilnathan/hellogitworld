@@ -9,7 +9,7 @@ public class App
 {
     public static void main( String[] args )
     {
-    	//Comment
+    	string password="mypassword";
         System.out.println( "Hello World!" );
     }
 }
