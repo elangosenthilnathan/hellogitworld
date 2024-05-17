@@ -12,7 +12,7 @@ steps:
       echo "====================================="
       echo $${BUILDKITE_PULL_REQUEST}
       echo "====================================="
-      echo $${BUILDKITE_PULL_REQUEST_REPO}
+      echo $${BUILDKITE_BUILD_AUTHOR}
       echo "======================================"
       ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user=$${BUILDKITE_BUILD_AUTHOR} --github-pr-repo=$${BUILDKITE_REPO} --github-token=${GITHUB_TOKEN}
     key: QwietScan
