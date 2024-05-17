@@ -8,11 +8,13 @@ steps:
       curl https://cdn.shiftleft.io/download/sl > ./sl && chmod a+rx ./sl
       ./sl analyze --wait --app myApp  --tag branch="$BUILDKITE_BRANCH" .
       echo "====================================="
-      echo ${github-pull-request-plugin-number}
+      echo $${BUILDKITE_REPO}
       echo "====================================="
-      echo ${BUILDKITE_PULL_REQUEST}
+      echo $${BUILDKITE_PULL_REQUEST}
       echo "====================================="
-      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=${BUILDKITE_PULL_REQUEST} --github-pr-user=${BUILDKITE_BUILD_AUTHOR} --github-pr-repo=${BUILDKITE_REPO} --github-token=${GITHUB_TOKEN}
+      echo $${BUILDKITE_PULL_REQUEST_REPO}
+      echo "======================================"
+      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user=$${BUILDKITE_BUILD_AUTHOR} --github-pr-repo=$${BUILDKITE_REPO} --github-token=${GITHUB_TOKEN}
     key: QwietScan
     env:
       - GITHUB_TOKEN=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
