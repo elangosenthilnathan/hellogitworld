@@ -9,12 +9,12 @@ steps:
   - label: ":white_check_mark: Test"
     command: |
       curl https://cdn.shiftleft.io/download/sl > ./sl && chmod a+rx ./sl
-      ./sl analyze --wait --app myApp  --tag branch="$BUILDKITE_BRANCH" .
+      #./sl analyze --wait --app myApp  --tag branch="$BUILDKITE_BRANCH" .
       url=$${BUILDKITE_REPO}
       basename=$$(basename $$url)
       reponame=$${basename%.*}
 
-      temp=$(awk -F/ '{sub(/\..*/,"",$NF); print $NF}' <<< "$url")
+      temp=echo $${url} | sed -nr  's/^(https|git)(:\/\/|@)([^\/:]+)[\/:]([^\/:]+)\/(.+).git$$/\4\/\5/p'
       echo "===================================="
       echo $${temp}
       echo "====================================="
