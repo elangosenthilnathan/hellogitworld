@@ -4,7 +4,7 @@ emoji: ":rocket:"
 tags: ["appsec"]
 
 env:
-  GITHUB_TOKEN: "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"
+  GITHUB_TOKEN: "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"
 steps:
   - label: ":white_check_mark: Test"
     command: |
@@ -17,6 +17,6 @@ steps:
       echo "====================================="
       echo $${BUILDKITE_BUILD_AUTHOR}
       echo "======================================"
-      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user=$${BUILDKITE_BUILD_AUTHOR} --github-pr-repo=$${BUILDKITE_REPO} --github-token="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"
+      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user=$${BUILDKITE_BUILD_AUTHOR} --github-pr-repo=$${BUILDKITE_REPO} --github-token=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
     key: QwietScan
 
