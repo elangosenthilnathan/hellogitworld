@@ -22,6 +22,6 @@ steps:
       echo "======================================"
       echo $${BUILDKITE_BUILD_AUTHOR_EMAIL}
       echo "======================================"
-      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user=$${temp} --github-pr-repo=$${reponame} --github-token=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
+      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user='elangosenthilnathan' --github-pr-repo=$${reponame} --github-token=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
     key: QwietScan
 
