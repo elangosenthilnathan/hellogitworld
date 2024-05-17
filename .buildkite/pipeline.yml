@@ -17,11 +17,7 @@ steps:
       temp=echo $${url} | sed -nr  's/^(https|git)(:\/\/|@)([^\/:]+)[\/:]([^\/:]+)\/(.+).git$$/\4\/\5/p'
       echo "===================================="
       echo $${temp}
-      echo "====================================="
-      echo $${BUILDKITE_BUILD_AUTHOR}
-      echo "======================================"
-      echo $${BUILDKITE_BUILD_AUTHOR_EMAIL}
-      echo "======================================"
-      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user='elangosenthilnathan' --github-pr-repo=$${reponame} --github-token=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
+
+      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user='elangosenthilnathan' --github-pr-repo=$${reponame} --github-token='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'
     key: QwietScan
 
