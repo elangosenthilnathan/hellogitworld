@@ -9,7 +9,8 @@ public class App
 {
     public static void main( String[] args )
     {
-    	//Comment
+    	string AWSKEY="234hf278hd1912hd";
+        string password="myPassword";
         System.out.println( "Hello World!" );
     }
 }
