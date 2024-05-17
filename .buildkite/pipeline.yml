@@ -12,11 +12,7 @@ steps:
       echo "====================================="
       echo $BUILDKITE_PULL_REQUEST      
       echo "====================================="
-      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml \
-            --github-pr-number=$BUILDKITE_PULL_REQUEST \
-            --github-pr-user=$BUILDKITE_BUILD_AUTHOR \
-            --github-pr-repo=$BUILDKITE_REPO \
-            --github-token=$GITHUB_TOKEN
-    key: test
+      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$BUILDKITE_PULL_REQUEST --github-pr-user=$BUILDKITE_BUILD_AUTHOR --github-pr-repo=$BUILDKITE_REPO --github-token=$GITHUB_TOKEN
+    key: Qwiet Scan
     env:
       - GITHUB_TOKEN=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
