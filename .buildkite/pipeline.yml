@@ -20,6 +20,6 @@ steps:
       echo "===================================="
       echo $${url}
 
-      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user='elangosenthilnathan' --github-pr-repo=$${reponame} --github-token='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'
+      ./sl check-analysis --v2 --app myApp2  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user='elangosenthilnathan' --github-pr-repo=$${reponame} --github-token='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'
     key: QwietScan
 
