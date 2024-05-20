@@ -14,10 +14,12 @@ steps:
       basename=$$(basename $$url)
       reponame=$${basename%.*}
 
-      temp=echo $${url} | sed -nr  's/^(https|git)(:\/\/|@)([^\/:]+)[\/:]([^\/:]+)\/(.+).git$$/\4\/\5/p'
+      temp=echo $${url} | sed -nr  's/^(https|git)(:\/\/|@)([^\/:]+)[\/:]([^\/:]+)\/(.+).git$$/\4\//p'
       echo "===================================="
       echo $${temp}
+      echo "===================================="
+      echo $${url}
 
-      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user='elangosenthilnathan' --github-pr-repo=$${reponame} --github-token='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'
+      ./sl check-analysis --v2 --app myApp  --config shiftleft.yml --github-pr-number=$${BUILDKITE_PULL_REQUEST} --github-pr-user='elangosenthilnathan' --github-pr-repo=$${reponame} --github-token='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'
     key: QwietScan
 
